@@ -40,7 +40,7 @@ const CommentForm: React.FC<CommentFormProps> = ({
     const newCommentTemp: CommentType = {
       id: Math.random() * 3,
       content: value,
-      createdAt: formatDate,
+      createdAt: dateFormat,
       score: 0,
       likedBy: [],
       user: currentUser,
@@ -50,7 +50,7 @@ const CommentForm: React.FC<CommentFormProps> = ({
     const replyTemp: ReplyType = {
       id: Math.random() * 3,
       content: value,
-      createdAt: formatDate,
+      createdAt: dateFormat,
       score: 0,
       likedBy: [],
       parentID: currentComment?.parentID,

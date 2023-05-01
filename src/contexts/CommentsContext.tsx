@@ -9,7 +9,7 @@ import {
   ActionType,
   dataType,
 } from "../types";
-import { formatDate } from "../components/commentForm/CommentForm";
+import { dateFormat, formatDate } from "../components/commentForm/CommentForm";
 import { useLocalStorage } from "../helpers/useLocalStorage";
 
 export interface CommentsContextType {
@@ -112,7 +112,7 @@ export const CommentsProvider: React.FC<{ children: React.ReactNode }> = ({
     setComments((prevComments) => [
       ...prevComments.map((comment) => {
         if (comment.id === id) {
-          return { ...comment, content: newContent, createdAt: formatDate };
+          return { ...comment, content: newContent, createdAt: dateFormat };
         }
 
         if (comment.replies.length) {
@@ -121,7 +121,11 @@ export const CommentsProvider: React.FC<{ children: React.ReactNode }> = ({
             replies: [
               ...comment.replies.map((reply) => {
                 if (reply.id === id) {
-                  return { ...reply, content: newContent };
+                  return {
+                    ...reply,
+                    content: newContent,
+                    createdAt: dateFormat,
+                  };
                 }
                 return reply;
               }),
