@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 import data from "../utils/data.json";
-import mockData from "../utils/mockdata";
+import mockData from "../utils/mockData";
 
 import {
   CommentType,
