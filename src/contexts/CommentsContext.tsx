@@ -1,16 +1,15 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 import data from "../utils/data.json";
+import mockData from "../utils/mockdata";
 
 import {
   CommentType,
   CurrentCommentType,
   ReplyType,
   ActionType,
-  dataType,
 } from "../types";
-import { dateFormat, formatDate } from "../components/commentForm/CommentForm";
-import { useLocalStorage } from "../helpers/useLocalStorage";
+import { dateFormat } from "../components/commentForm/CommentForm";
 
 export interface CommentsContextType {
   comments: CommentType[];
@@ -45,7 +44,7 @@ export const CommentsProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [comments, setComments] = useState<CommentType[]>(
-    storedComments ? parsedComments : data.comments
+    storedComments ? parsedComments : mockData.comments
   );
   const [currentComment, setCurrentComment] =
     useState<CurrentCommentType>(null);
