@@ -17,7 +17,8 @@ import DialogProvider from "./contexts/DialogContext";
 
 function App() {
   return (
-    <div className="container">
+    <main className="container">
+      <h1 className="sr-only">comments</h1>
       <CommentsProvider>
         <DialogProvider>
           <CommentList />
@@ -25,7 +26,7 @@ function App() {
           <DialogBox />
         </DialogProvider>
       </CommentsProvider>
-    </div>
+    </main>
   );
 }
 
