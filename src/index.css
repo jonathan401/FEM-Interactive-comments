@@ -203,7 +203,9 @@ button.ghost:focus,
 
 /* utilities */
 .sr-only {
-  display: none; /*TODO: make this more accessible */
+  height: 0;
+  width: 0;
+  opacity: 0; /*TODO: make this more accessible */
 }
 
 .desktop {
